@@ -1,0 +1,151 @@
+.offer {
+  background-image: url(../../images/snow_mountains_color_m.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__intro {
+    margin-top: 15vh;
+    color: $blue-light;
+    align-self: center;
+    text-align: center;
+    width: 70vw;
+    max-width: 70vw;
+    &--paragraph:last-child {
+      padding-top: 2rem;
+      font-size: calc(#{$default-font-size} * 1.25);
+    }
+
+    &--reasons {
+      margin-top: 1rem;
+      padding: 1.5rem;
+      background-color: $blue-dark;
+      border-radius: $radius;
+    }
+
+    &--list {
+      font-size: calc(#{$default-font-size} * 0.8);
+      list-style-position: inside;
+      padding: 0 0.3rem;
+    }
+    &--item {
+      padding: 0.3rem 0;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    margin: 0rem 5rem 5rem;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    @include respond(tab-land) {
+      justify-content: space-evenly;
+    }
+    @include respond(tab-port) {
+      justify-content: space-around;
+    }
+  }
+
+  &__single {
+    display: flex;
+    padding: 2rem 4rem;
+    margin: 5rem 4rem 0;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40rem;
+    width: 25vw;
+    color: $blue-dark;
+    text-align: center;
+    @include bcg-format;
+    border-radius: $radius;
+    box-shadow: 0 0 3rem $orange-light;
+    overflow-wrap: break-word;
+    transition: $anim;
+    &-front {
+      &--Doradztwo {
+        @include bcg-offer-front(url(../../images/rescue_color_s.jpg));
+      }
+      &--Konsultacje {
+        @include bcg-offer-front(url(../../images/mentor_fishing_color_s.jpg));
+      }
+      &--Szkolenia {
+        @include bcg-offer-front(url(../../images/training_color_s.jpg));
+      }
+    }
+    &-back {
+      &--Doradztwo {
+        @include bcg-offer-back;
+      }
+      &--Konsultacje {
+        @include bcg-offer-back;
+      }
+      &--Szkolenia {
+        @include bcg-offer-back;
+      }
+    }
+    @include respond(tab-land) {
+      width: 75vw;
+      margin-bottom: 5rem;
+    }
+    @include respond(tab-land-small) {
+      height: 40rem;
+      width: 40rem;
+      margin-bottom: 5rem;
+    }
+    @include respond(tab-port) {
+      height: 52rem;
+      width: 52rem;
+      margin-bottom: 5rem;
+    }
+    @include respond(tab-port-small) {
+      height: 32rem;
+      width: 32rem;
+      margin-bottom: 5rem;
+    }
+    @include respond(phone-land-small) {
+      height: 50rem;
+      width: 50rem;
+      margin-bottom: 5rem;
+    }
+    @include respond(phone-port) {
+      height: 40rem;
+      width: 40rem;
+    }
+    &--desc {
+      height: 5rem;
+      font-size: $default-font-size;
+      @include respond(tab-land) {
+        font-size: calc(#{$default-font-size}* 1.25);
+      }
+    }
+
+    &--heading {
+      padding: 0 2rem;
+      text-transform: uppercase;
+      color: $orange-light;
+      @include respond(tab-land) {
+        font-size: calc(#{$default-font-size}* 1.5);
+      }
+      @include respond(tab-land-small) {
+        padding-top: 1rem;
+      }
+    }
+
+    &--single-desc {
+      font-size: calc(#{$default-font-size} * 1.25);
+      font-weight: 700;
+      @include respond(tab-port) {
+        font-size: calc(#{$default-font-size} * 1.75);
+      }
+      @include respond(phone-port) {
+        font-size: calc(#{$default-font-size} * 1.25);
+        padding: 2rem 0;
+      }
+    }
+    &:hover {
+      box-shadow: 0 0 50px $orange-dark;
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.menu__burger--backdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba($orange-dark, 0.6);
+  z-index: 2000;
+  transition: $anim;
+}

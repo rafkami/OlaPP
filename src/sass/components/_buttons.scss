@@ -1,0 +1,104 @@
+.btn {
+  border: none;
+  margin: 3rem auto;
+  border-radius: $radius;
+  border: 2px solid $blue-medium;
+  padding: 3rem;
+  background-color: transparent;
+  color: $blue-medium;
+  font-size: calc(#{$default-font-size} * 1.25);
+  font-weight: 700;
+  outline-color: transparent;
+  transition: $anim;
+
+  &:hover {
+    background-color: $blue-dark;
+    border: 2px solid $blue-dark;
+    color: $white;
+    transform: scale(1.02);
+  }
+  &:focus {
+    outline-color: transparent;
+    color: $white;
+  }
+
+  &__menu-burger {
+    flex-shrink: 1;
+    position: relative;
+    display: block;
+    border: none;
+    // background-color: #fff;
+    background-color: transparent;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 5000;
+    transition: $anim;
+
+    &--active {
+      transform: rotate(180deg);
+    }
+    &--active &--line {
+      &1 {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+      &3 {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+      &2 {
+        opacity: 0;
+      }
+    }
+
+    @include respond(tab-land-small) {
+      height: 4.5rem;
+      width: 4.5rem;
+    }
+
+    &-wrapper {
+      display: none;
+      @include respond(tab-port) {
+        display: flex;
+        justify-content: flex-end;
+      }
+      @include respond(tab-land-small) {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+
+    &:focus {
+      outline: none;
+      background-color: transparent;
+    }
+
+    &:hover {
+      background-color: transparent;
+    }
+
+    // &:hover &--line {
+    // background-color: transparent;
+    // }
+
+    &--line {
+      position: absolute;
+      @include center-absolute-el;
+      height: 0.4rem;
+      width: 4rem;
+      margin: 0 auto;
+      background-color: $orange-light;
+      border-radius: 0.2rem;
+      transition: transform 0.2s 0.2s ease-in-out;
+      &1 {
+        transform: translate(-50%, -300%);
+      }
+      &3 {
+        transform: translate(-50%, 200%);
+      }
+      @include respond(tab-land-small) {
+        width: 3rem;
+      }
+    }
+  }
+}

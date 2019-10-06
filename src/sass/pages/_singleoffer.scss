@@ -1,0 +1,40 @@
+.single-offer {
+  width: 90vw;
+  min-height: 90%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &__heading {
+    padding: 3rem 0 0;
+    color: $orange-light;
+    @include respond(tab-port) {
+      font-size: calc(#{$default-font-size} * 2.25);
+    }
+    @include respond(phone-port) {
+      font-size: calc(#{$default-font-size} * 1.75);
+    }
+  }
+
+  &__details {
+    font-size: $default-font-size;
+    width: 90%;
+    margin: 0 auto;
+    @include respond(tab-land) {
+      font-size: calc(#{$default-font-size} * 0.8);
+    }
+    @include respond(tab-port) {
+      font-size: calc(#{$default-font-size} * 1.25);
+    }
+
+    &--desc {
+      font-size: calc(#{$default-font-size} * 0.85);
+    }
+
+    &--price {
+      margin-top: 3rem;
+      font-weight: 700;
+    }
+  }
+}

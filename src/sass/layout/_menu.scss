@@ -1,0 +1,129 @@
+.menu-wrapper {
+  flex-grow: 1;
+}
+.menu {
+  flex-grow: 1;
+  @include respond(tab-port) {
+    display: none;
+  }
+
+  @include respond(tab-land-small) {
+    display: none;
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+  }
+
+  &__item {
+    flex-basis: content;
+    text-align: center;
+    padding: 2rem;
+    font-size: $default-font-size;
+    @include respond(tab-port) {
+      font-size: calc(#{$default-font-size} * 1.5);
+    }
+    @include respond(tab-port-small) {
+      font-size: calc(#{$default-font-size} * 1.2);
+      // padding: 1.5rem;
+    }
+    @include respond(phone-land) {
+      padding: 1.5rem;
+    }
+    @include respond(phone-land-small) {
+      font-size: calc(#{$default-font-size} * 1.1);
+    }
+
+    &--link {
+      display: block;
+      text-decoration: none;
+      color: $orange-light;
+      transition: $anim;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: -0.2rem;
+        width: 0;
+        height: 0.2rem;
+        margin-top: 0.2rem;
+        transition: $anim;
+        opacity: 0;
+        background-color: $orange-light;
+      }
+
+      &::before {
+        left: calc(50%);
+      }
+
+      &::after {
+        right: calc(50%);
+      }
+
+      &:hover {
+        transform: scale(1.2) translateY(1rem);
+        color: $white;
+        @include respond(tab-port-small) {
+          transform: scale(1.2);
+        }
+        &::before,
+        &::after {
+          background-color: $white;
+          width: 50%;
+          opacity: 1;
+          @include respond(tab-port-small) {
+            opacity: 0;
+          }
+        }
+      }
+
+      &.active {
+        transform: scale(1.2);
+        color: $blue-light;
+        &:hover {
+          &::before,
+          &::after {
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.side-menu {
+  position: fixed;
+  display: none;
+  top: 13.5vh;
+  right: 0;
+  transform: translateY(-50vh);
+  z-index: 3000;
+  padding: 0 2rem;
+  border-top-left-radius: radius;
+  border-bottom-left-radius: radius;
+  background-color: $blue-dark;
+  transition: transform 0.4s ease-out;
+  @include respond(tab-port) {
+    display: block;
+    &--active {
+      transform: translateX(0);
+    }
+  }
+  @include respond(tab-land-small) {
+    display: block;
+    &--active {
+      transform: translateX(0);
+    }
+  }
+  &__list {
+    list-style: none;
+    & .menu__item {
+      &:not(:first-child) {
+        border-top: 1px solid $blue-medium;
+      }
+    }
+  }
+}

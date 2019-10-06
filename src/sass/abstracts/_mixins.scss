@@ -1,0 +1,83 @@
+@mixin bcg-offer-front($url) {
+  background-image: linear-gradient(
+      to bottom,
+      rgba($blue-dark, 0.9) 0%,
+      rgba($blue-light, 0.1) 40%,
+      rgba($blue-light, 0.9) 80%,
+      rgba($white, 0.9) 100%
+    ),
+    $url;
+}
+
+@mixin bcg-offer-back {
+  background-image: linear-gradient(
+    to bottom,
+    rgba($blue-dark, 0.9) 0%,
+    rgba($blue-light, 0.9) 40%,
+    rgba($blue-light, 0.9) 80%,
+    rgba($white, 0.9) 100%
+  );
+}
+
+@mixin bcg-opinion($url) {
+  background-image: linear-gradient(
+      to bottom left,
+      rgba($blue-dark, 0.8),
+      rgba($blue-dark, 0.1)
+    ),
+    $url;
+}
+
+@mixin bcg-format {
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin center-absolute-el {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone-port {
+    @media only screen and (max-width: 30em) and (orientation: portrait) {
+      @content;
+    } //480px
+  }
+  @if $breakpoint == phone-land-small {
+    @media only screen and (max-width: 37.5em) and (orientation: landscape) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == phone-land {
+    @media only screen and (max-width: 43.75em) and (orientation: landscape) {
+      @content;
+    } //700px
+  }
+  @if $breakpoint == tab-port-small {
+    @media only screen and (max-width: 56.25em) and (orientation: portrait) {
+      @content;
+    } //900px
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 75em) and (orientation: portrait) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == tab-land-small {
+    @media only screen and (max-width: 62.5em) and (orientation: landscape) {
+      @content;
+    } //1000px
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 87.5em) and (orientation: landscape) {
+      @content;
+    } //1400px
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    } //1800px and more
+  }
+}

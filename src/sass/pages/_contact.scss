@@ -1,0 +1,210 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  background-image: linear-gradient(
+      to bottom,
+      rgba($blue-dark, 0.7),
+      rgba($orange-light, 0.3),
+      rgba($orange-light, 0.7)
+    ),
+    url(../../images/message_bottle_l.jpg);
+  background-size: cover;
+
+  &__heading {
+    color: $blue-medium;
+    padding-top: 15rem;
+    text-align: center;
+    &--sub {
+      font-size: calc(#{$default-font-size} * 1.25);
+    }
+  }
+
+  &__it {
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+
+    @include respond(tab-land-small) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    @include respond(tab-port) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    &--channel {
+      display: flex;
+      font-weight: 700;
+      width: 25vw;
+      justify-content: center;
+      align-items: center;
+
+      @include respond(tab-land) {
+        width: 30vw;
+        flex-shrink: 0;
+      }
+      @include respond(tab-land-small) {
+        width: 35vw;
+        flex-shrink: 0;
+      }
+      @include respond(tab-port) {
+        width: 60vw;
+        flex-shrink: 0;
+      }
+      @include respond(tab-port-small) {
+        width: 35vw;
+      }
+      @include respond(phone-land) {
+        width: 60vw;
+      }
+      @include respond(phone-port) {
+        width: 60vw;
+      }
+    }
+
+    &--icon {
+      position: static;
+      margin-right: 2rem;
+    }
+
+    &--link {
+      text-decoration: none;
+      text-align: center;
+      @include respond(tab-land) {
+        min-width: 25vw;
+      }
+    }
+  }
+
+  &__address {
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    margin-bottom: 4rem;
+    @include respond(tab-port) {
+      flex-direction: column;
+      align-items: center;
+    }
+    @include respond(phone-land-small) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &--heading {
+      font-size: calc(#{$default-font-size} * 1.5);
+      color: $blue-dark;
+      font-weight: 700;
+      margin: 3rem auto 6rem;
+      text-align: center;
+      @include respond(tab-land-small) {
+        margin: 3rem 6rem 8rem;
+      }
+      @include respond(tab-port-small) {
+        margin: 3rem 6rem 4rem;
+      }
+    }
+
+    &--wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &:first-child {
+        margin-right: 5rem;
+      }
+      @include respond(tab-port) {
+        &:first-child {
+          margin: 0 0 5vh;
+        }
+      }
+      @include respond(phone-land-small) {
+        &:first-child {
+          margin: 0 0 10vh;
+        }
+      }
+      @include respond(phone-port) {
+        flex-direction: column;
+      }
+    }
+
+    &--details {
+      color: $blue-dark;
+      font-size: $default-font-size;
+    }
+
+    &--place {
+      padding-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      width: 70%;
+      justify-content: space-between;
+      @include respond(tab-land) {
+        width: 35vw;
+        text-align: right;
+      }
+      @include respond(tab-port) {
+        width: 20vw;
+        text-align: right;
+      }
+      @include respond(phone-land-small) {
+        width: 20vw;
+        text-align: right;
+      }
+      @include respond(phone-port) {
+        width: 80vw;
+        text-align: center;
+      }
+      &name {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: $blue-dark;
+        font-weight: 700;
+      }
+    }
+    &--logo {
+      padding-right: 2rem;
+    }
+  }
+
+  &__map {
+    margin-left: 5rem;
+    width: 80rem;
+    max-width: 40vw;
+    height: 30rem;
+    border-radius: $radius;
+
+    @include respond(tab-land) {
+      margin-left: 3rem;
+    }
+    @include respond(tab-port) {
+      width: 60rem;
+      height: 30rem;
+    }
+    @include respond(phone-port) {
+      height: 85vw;
+      width: 85vw;
+      margin-left: 0;
+      margin-top: 3rem;
+    }
+
+    &--marker {
+      background-color: $blue-dark;
+      border-radius: 50%;
+      border-style: solid;
+      border-color: $blue-light;
+      transition: $anim;
+      animation: pulsate 1s infinite;
+    }
+  }
+
+  // .mapboxgl-map {
+  //   @include respond(tab-land) {
+  //     width: 60rem;
+  //     height: 30rem;
+  //   }
+  // }
+}

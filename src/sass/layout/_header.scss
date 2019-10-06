@@ -1,0 +1,91 @@
+.header {
+  position: fixed;
+  top: 5vh;
+  left: 5vh;
+  right: 5vh;
+  flex-basis: 10vh;
+  z-index: 10;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    align-items: center;
+  }
+
+  &__logo {
+    height: 10rem;
+    @include respond(tab-land) {
+      height: 8rem;
+    }
+  }
+
+  &__title {
+    text-decoration: none;
+    color: $orange-light;
+    flex-basis: 40vw;
+    min-width: 30rem;
+    font-family: "Lato", sans-serif;
+    font-size: calc(#{$default-font-size} * 1.75);
+    padding-left: 5rem;
+    transition: $anim;
+    @include respond(tab-land) {
+      flex-basis: 40vw;
+      font-size: calc(#{$default-font-size} * 1.2);
+      line-height: 1.4;
+    }
+    @include respond(tab-land-small) {
+      font-size: calc(#{$default-font-size} * 1.1);
+    }
+    @include respond(tab-port) {
+      flex-basis: 40vw;
+      font-size: calc(#{$default-font-size} * 1.75);
+    }
+    @include respond(tab-port-small) {
+      flex-basis: 35vw;
+      font-size: calc(#{$default-font-size} * 1.4);
+      line-height: 1.2;
+    }
+    @include respond(phone-land) {
+      font-size: calc(#{$default-font-size} * 1.15);
+    }
+    @include respond(phone-land-small) {
+      flex-basis: 40vw;
+    }
+    @include respond(phone-port) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-basis: 65vw;
+      padding-left: 3rem;
+      font-size: calc(#{$default-font-size} * 1.47);
+    }
+
+    &--name {
+      text-transform: uppercase;
+      @include respond(phone-port) {
+        flex-basis: 65vw;
+        flex-grow: 1;
+        line-height: 2.5;
+      }
+    }
+
+    &--subtitle {
+      &:not(:last-of-type) {
+        padding-right: 1rem;
+      }
+      &:nth-last-of-type(2),
+      &:last-of-type {
+        padding-left: 1rem;
+      }
+      &:last-of-type {
+        @include respond(phone-port) {
+          padding-left: 0;
+        }
+      }
+    }
+
+    &:hover {
+      color: $white;
+    }
+  }
+}

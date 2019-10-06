@@ -1,0 +1,31 @@
+.error {
+  background-color: $blue-dark;
+  overflow: hidden;
+  &__window {
+    position: absolute;
+    z-index: 1;
+    top: -20vh;
+    left: 0;
+    width: 100vw;
+  }
+  &__text {
+    position: absolute;
+    z-index: 2;
+    @include center-absolute-el;
+    font-size: calc(#{$default-font-size} * 1.5);
+    color: $orange-light;
+    text-align: center;
+    &--link {
+      box-sizing: border-box;
+      color: $blue-light;
+      font-weight: 700;
+      text-decoration: none;
+      line-height: 400%;
+      padding: 1rem;
+      &:hover {
+        border: 3px solid $orange-light;
+        color: $orange-light;
+      }
+    }
+  }
+}

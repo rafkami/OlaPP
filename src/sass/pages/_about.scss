@@ -1,0 +1,184 @@
+.about {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  background-image: linear-gradient(
+    to bottom,
+    rgba($blue-dark, 0.8) 0%,
+    rgba($blue-medium, 0.8) 20%,
+    rgba($blue-light, 0.8) 70%,
+    rgba($orange-light, 0.8) 100%
+  );
+  z-index: -10;
+
+  @include respond(tab-port) {
+    flex-direction: column;
+  }
+
+  &__img {
+    filter: grayscale(1);
+    transition: $anim;
+    height: 150vh;
+    transform: translate(-3%, -20%);
+    @include respond(tab-land) {
+      transform: translate(-25%, -22%);
+    }
+    // @include respond(tab-land-small) {
+    //   height: 200vh;
+    // }
+
+    @include respond(tab-port) {
+      position: relative;
+      height: 40vh;
+    }
+    @include respond(phone-port) {
+      position: relative;
+      height: auto;
+      width: 90vw;
+    }
+    // @include respond(phone-land) {
+    //   height: 150vh;
+    // }
+    // @include respond(phone-land-small) {
+    //   height: 250vh;
+    // }
+
+    &-wrapper {
+      filter: grayscale(1);
+      position: fixed;
+      top: 0;
+      right: 0;
+      z-index: -1;
+      max-width: 50%;
+      min-width: 50vw;
+      overflow: hidden;
+      // @include respond(tab-land) {
+      //   overflow: hidden;
+      //   width: 1600px;
+      //   max-width: 600px;
+      //   text-indent: -50%;
+      // }
+      // @include respond(tab-land-small) {
+      //   width: 1600px;
+      //   max-width: 400px;
+      //   text-indent: -90%;
+      // }
+      @include respond(tab-port) {
+        overflow: hidden;
+        height: 40vh;
+      }
+      @include respond(phone-port) {
+        height: auto;
+        width: 90vw;
+        padding-left: 0;
+      }
+      // @include respond(phone-land) {
+      //   width: 1100px;
+      //   max-width: 240px;
+      //   text-indent: -80%;
+      // }
+      // @include respond(phone-land-small) {
+      //   height: 220vh;
+      //   max-height: none;
+      //   width: 1300px;
+      //   max-width: 300px;
+      //   text-indent: -130%;
+      // }
+      // @include respond(phone-port) {
+      //   overflow: hidden;
+      //   max-width: 85vw;
+      //   height: 100rem;
+      //   max-height: 40vh;
+      //   text-indent: -10%;
+      // }
+      &:hover {
+        filter: none;
+      }
+    }
+  }
+
+  &__block {
+    width: 50vw;
+    @include respond(tab-port) {
+      min-height: 30vh;
+    }
+    @include respond(phone-port) {
+      min-height: 30vh;
+    }
+  }
+
+  &__description {
+    padding: 2rem calc(#{$default-font-size} * 4);
+    color: $orange-dark;
+
+    &--heading {
+      text-align: center;
+      padding-top: 15rem;
+      margin-bottom: 1rem;
+    }
+    &--paragraph {
+      font-size: calc(#{$default-font-size} * 1.25);
+      @include respond(phone-port) {
+        font-size: calc(#{$default-font-size} * 1.5);
+      }
+    }
+    &--finger {
+      margin-left: 1rem;
+      position: unset;
+      left: 0;
+    }
+  }
+  &__carousel {
+    border-radius: $radius;
+    overflow: hidden;
+    height: 30rem;
+    margin: 3rem auto;
+    color: $orange-light;
+    font-size: calc(#{$default-font-size} * 1.25);
+    @include respond(tab-land) {
+      height: 35vh;
+    }
+
+    &--item {
+      display: flex;
+      height: 30rem;
+    }
+    &--img {
+      flex-basis: 80rem;
+      height: 100%;
+      background-position-y: 30%;
+      background-size: cover;
+      background-position-y: top;
+      background-position-x: center;
+
+      &1 {
+        @include bcg-opinion(url(../../images/jan_kowalski_opinion.jpg));
+      }
+      &2 {
+        @include bcg-opinion(url(../../images/zofia_nowak_opinion.jpg));
+      }
+      &3 {
+        @include bcg-opinion(url(../../images/joanna_strzelecka_opinion.jpg));
+      }
+    }
+    &--opinion {
+      display: block;
+      padding: 4rem;
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($blue-dark, 0.8),
+        rgba($blue-dark, 0.7),
+        rgba($blue-dark, 0.4)
+      );
+      @include respond(tab-land) {
+        font-size: calc(#{$default-font-size} * 0.9);
+      }
+    }
+    &--author {
+      display: block;
+      margin-bottom: 2rem;
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+    }
+  }
+}
