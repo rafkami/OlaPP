@@ -7,10 +7,12 @@ import ReactMapboxGl, {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faFacebookMessenger,
-  faFacebook
+  faFacebook,
+  faSkype,
+  faLinkedin
 } from "@fortawesome/free-brands-svg-icons";
 import { faAt } from "@fortawesome/free-solid-svg-icons";
-import busyBee from "../images/coworking_busybee.jpg";
+import clockWork from "../images/clockwork_logo.png";
 import bLab from "../images/coworking_nowyswiat.png";
 
 const Map = ReactMapboxGl({
@@ -24,8 +26,8 @@ const Contact = () => {
       <div className="contact__heading ">
         <h3 className="heading-big">Skontaktuj się ze mną</h3>
         <p className="contact__heading--sub">
-          - napisz do mnie ws. współpracy, zobacz też mój profil w mediach
-          społecznościowych
+          - napisz lub zadzwoń do mnie ws. współpracy, zobacz też moje profile w
+          mediach społecznościowych
         </p>
       </div>
       <div className="contact__it">
@@ -57,6 +59,19 @@ const Contact = () => {
         </div>
         <div className="contact__it--channel">
           <a
+            href="skype:olapiotrowiczprzyluska?add"
+            className="contact__it--link btn"
+          >
+            <FontAwesomeIcon
+              icon={faSkype}
+              size="lg"
+              className="contact__it--icon"
+            />
+            Zadzwoń
+          </a>
+        </div>
+        <div className="contact__it--channel">
+          <a
             href="https://www.facebook.com/Spr%C4%99%C5%BCyna-wydarze%C5%84-razem-do-celu-106049154072037/"
             className="contact__it--link btn"
           >
@@ -66,6 +81,19 @@ const Contact = () => {
               className="contact__it--icon"
             />
             Sprężyna Wydarzeń
+          </a>
+        </div>
+        <div className="contact__it--channel">
+          <a
+            href="https://www.linkedin.com/in/apiotrowiczprzyluskakonsultant/"
+            className="contact__it--link btn"
+          >
+            <FontAwesomeIcon
+              icon={faLinkedin}
+              size="lg"
+              className="contact__it--icon"
+            />
+            Mój profil
           </a>
         </div>
       </div>
@@ -81,27 +109,27 @@ const Contact = () => {
               className="heading-medium contact__address--placename"
             >
               <img
-                src={busyBee}
-                alt="logo Busy Bee"
+                src={clockWork}
+                alt="logo ClockWork"
                 className="contact__address--logo"
               />
-              Busy Bee
+              ClockWork Mokotów
             </a>
             <p className="contact__address--details">
-              ul. Libijska 10C
+              ul. Ksawerów 3
               <br />
-              03-977 Warszawa
+              02-656 Warszawa
             </p>
           </div>
           <Map
             className="contact__map"
-            center={[21.074601, 52.224372]}
+            center={[21.023487, 52.187056]}
             zoom={[15]}
             style={`mapbox://styles/mapbox/streets-v8`}
           >
             <ScaleControl />
             <ZoomControl />
-            <Marker coordinates={[21.074601, 52.224372]}>
+            <Marker coordinates={[21.023487, 52.187056]}>
               <div className="contact__map--marker" />
             </Marker>
           </Map>

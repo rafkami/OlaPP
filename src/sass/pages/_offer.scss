@@ -51,7 +51,7 @@
   &__single {
     display: flex;
     padding: 2rem 4rem;
-    margin: 5rem 4rem 0;
+    margin: 3rem 4rem 0;
     flex-direction: column;
     justify-content: space-between;
     height: 40rem;
@@ -62,6 +62,7 @@
     border-radius: $radius;
     box-shadow: 0 0 3rem $orange-light;
     overflow-wrap: break-word;
+    cursor: pointer;
     transition: $anim;
     &-front {
       &--Doradztwo {

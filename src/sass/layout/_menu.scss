@@ -65,7 +65,7 @@
       }
 
       &:hover {
-        transform: scale(1.2) translateY(1rem);
+        transform: scale(1.2);
         color: $white;
         @include respond(tab-port-small) {
           transform: scale(1.2);
@@ -99,7 +99,7 @@
   display: none;
   top: 13.5vh;
   right: 0;
-  transform: translateY(-50vh);
+  transform: translateY(-100vh);
   z-index: 3000;
   padding: 0 2rem;
   border-top-left-radius: radius;
@@ -109,13 +109,13 @@
   @include respond(tab-port) {
     display: block;
     &--active {
-      transform: translateX(0);
+      transform: translateY(0);
     }
   }
   @include respond(tab-land-small) {
     display: block;
     &--active {
-      transform: translateX(0);
+      transform: translateY(0);
     }
   }
   &__list {

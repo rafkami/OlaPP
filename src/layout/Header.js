@@ -6,8 +6,14 @@ import Logo from "../images/orange_leaf_img.png";
 const Header = () => {
   return (
     <div className="header__wrapper">
-      <img src={Logo} alt="Zarysy twarzy - rysunek" className="header__logo" />
-      <NavLink to="/" exact className="header__title">
+      <img src={Logo} alt="Pomarańczowy liść" className="header__logo" />
+      <NavLink
+        to="/"
+        exact
+        className={
+          window.pageYOffset === 0 ? "header__title" : "header__title--hidden"
+        }
+      >
         <span className="header__title--name">Sprężyna wydarzeń</span>
         <span className="header__title--subtitle">- razem do celu</span>
       </NavLink>

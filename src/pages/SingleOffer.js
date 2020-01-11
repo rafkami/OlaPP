@@ -1,5 +1,6 @@
 import React from "react";
 import ReactCardFlip from "react-card-flip";
+import * as Markdown from "react-markdown";
 
 class SingleOffer extends React.Component {
   state = {
@@ -34,15 +35,10 @@ class SingleOffer extends React.Component {
             {fields.serviceName}
           </h4>
           <div className="single-offer__details">
-            <div className="single-offer__details--desc">
-              {fields.detailedDesc}
-            </div>
-            <div className="single-offer__details--price">
-              {fields.shortName === "Szkolenia" ||
-              fields.shortName === "Doradztwo"
-                ? `Cena ustalana indywidualnie`
-                : `Cena za 1h spotkania: ${fields.price} zł`}
-            </div>
+            <Markdown 
+            source={fields.detailedDesc}
+            className="single-offer__details--desc"
+            />
           </div>
         </div>
       </ReactCardFlip>
@@ -51,3 +47,10 @@ class SingleOffer extends React.Component {
 }
 
 export default SingleOffer;
+
+// <div className="single-offer__details--price">
+//               {fields.shortName === "Szkolenia" ||
+//               fields.shortName === "Doradztwo"
+//                 ? `Cena ustalana indywidualnie`
+//                 : `Cena za 1h spotkania: ${fields.price} zł`}
+//             </div>

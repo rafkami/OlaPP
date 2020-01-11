@@ -9,7 +9,7 @@
     rgba($blue-light, 0.8) 70%,
     rgba($orange-light, 0.8) 100%
   );
-  z-index: -10;
+  // z-index: -10;
 
   @include respond(tab-port) {
     flex-direction: column;
@@ -48,7 +48,7 @@
       position: fixed;
       top: 0;
       right: 0;
-      z-index: -1;
+      z-index: 2;
       max-width: 50%;
       min-width: 50vw;
       overflow: hidden;
@@ -108,7 +108,7 @@
   }
 
   &__description {
-    padding: 2rem calc(#{$default-font-size} * 4);
+    padding: 3rem calc(#{$default-font-size} * 4);
     color: $orange-dark;
 
     &--heading {
@@ -128,57 +128,32 @@
       left: 0;
     }
   }
-  &__carousel {
-    border-radius: $radius;
-    overflow: hidden;
-    height: 30rem;
-    margin: 3rem auto;
-    color: $orange-light;
-    font-size: calc(#{$default-font-size} * 1.25);
-    @include respond(tab-land) {
-      height: 35vh;
-    }
+  &__lightbox {
+    display: flex;
+    height: 16vh;
+    margin: 5rem auto 0;
+    // @include respond(tab-land) {
+    //   height: 35vh;
+    // }
 
     &--item {
-      display: flex;
-      height: 30rem;
+      // display: flex;
+      height: 16vh;
+      margin: 1.2vh;
+      & a {
+        height: 16vh;
+        cursor: pointer;
+        filter: grayscale(1);
+        transition: 0.2s ease-in-out;
+        &:hover {
+          filter: grayscale(0);
+          transform: scale(1.05);
+        }
+      }
     }
     &--img {
-      flex-basis: 80rem;
-      height: 100%;
-      background-position-y: 30%;
-      background-size: cover;
-      background-position-y: top;
-      background-position-x: center;
-
-      &1 {
-        @include bcg-opinion(url(../../images/jan_kowalski_opinion.jpg));
-      }
-      &2 {
-        @include bcg-opinion(url(../../images/zofia_nowak_opinion.jpg));
-      }
-      &3 {
-        @include bcg-opinion(url(../../images/joanna_strzelecka_opinion.jpg));
-      }
-    }
-    &--opinion {
-      display: block;
-      padding: 4rem;
-      background-image: linear-gradient(
-        to right bottom,
-        rgba($blue-dark, 0.8),
-        rgba($blue-dark, 0.7),
-        rgba($blue-dark, 0.4)
-      );
-      @include respond(tab-land) {
-        font-size: calc(#{$default-font-size} * 0.9);
-      }
-    }
-    &--author {
-      display: block;
-      margin-bottom: 2rem;
-      font-family: "Lato", sans-serif;
-      font-weight: 700;
+      height: 16vh;
+      width: auto;
     }
   }
 }

@@ -1,0 +1,107 @@
+.blogpost {
+  background-image: linear-gradient(
+      to bottom,
+      rgba($blue-dark, 0.7) 30%,
+      rgba($orange-light, 0.3),
+      rgba($orange-light, 0.1)
+    ),
+    url("../../images/beach-1866992_1920.jpg");
+  background-size: cover;
+  background-position-y: bottom;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  &__container {
+    background-image: linear-gradient(
+      to bottom,
+      rgba($blue-dark, 0) 30%,
+      rgba($blue-dark, 0.7),
+      rgba($blue-dark, 0.9)
+    );
+    display: grid;
+    grid-template-rows: repeat(4, 8rem) 1fr 15rem;
+    grid-template-columns: 1fr repeat(2, 15%) 1fr;
+    grid-column-gap: 2rem;
+    width: 80vw;
+    align-items: center;
+    justify-items: center;
+    margin: 15rem auto 5rem;
+    padding: 0 5rem;
+    border-radius: $radius;
+    box-shadow: 0 2rem 3rem $blue-dark;
+    color: $blue-light;
+    // flex-wrap: wrap;
+    // flex-grow: 1;
+    // @include respond(tab-land) {
+    //   justify-content: space-evenly;
+    // }
+    // @include respond(tab-port) {
+    //   justify-content: space-around;
+    // }
+  }
+  //   display: flex;
+  //   padding: 2rem 4rem;
+  //   margin: 5rem 4rem 0;
+  //   flex-direction: column;
+  //   justify-content: space-between;
+  //   align-items: center;
+  //   height: 40rem;
+  //   width: 25vw;
+  //   color: $blue-dark;
+  //   text-align: center;
+  //   text-decoration: none;
+  //   @include bcg-format;
+  //
+  //
+  //   @include bcg-offer-back;
+  //   cursor: pointer;
+  //   transition: $anim;
+  &__heading {
+    grid-area: 1 / 2 / 2 / 5;
+    padding: 0 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: calc(#{$default-font-size}* 1.5);
+    @include respond(tab-land) {
+      font-size: calc(#{$default-font-size}* 1.5);
+    }
+    @include respond(tab-land-small) {
+      padding-top: 1rem;
+    }
+  }
+  &__image {
+    grid-area: 1 / 1 / 5 / 3;
+    display: flex;
+    height: 25rem;
+    width: 100%;
+    overflow: hidden;
+    justify-content: left;
+    padding-left: 5rem;
+    &--thumb {
+      height: 100%;
+    }
+  }
+  &__lead {
+    grid-area: 3 / 2 / 5 / 5;
+    font-size: calc(#{$default-font-size} * 1.25);
+    padding: 0 10rem;
+    text-align: center;
+  }
+  &__date {
+    grid-area: 2 / 2 / 3 / 5;
+    font-size: calc(#{$default-font-size} * 0.8);
+    border-top: 1px solid $orange-light;
+    border-bottom: 1px solid $orange-light;
+    padding: 0.5rem 0;
+  }
+  &__full-content {
+    grid-area: 5 / 1 / 6 / -1;
+    margin: 0 5rem;
+    font-size: calc(#{$default-font-size} * 1);
+    color: $orange-light;
+  }
+  &__return {
+    grid-area: 6 / 1 / -1 / -1;
+    text-decoration: none;
+  }
+}

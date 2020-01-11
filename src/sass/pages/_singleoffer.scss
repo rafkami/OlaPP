@@ -29,12 +29,12 @@
     }
 
     &--desc {
-      font-size: calc(#{$default-font-size} * 0.85);
+      font-size: calc(#{$default-font-size} * 0.75);
     }
 
-    &--price {
-      margin-top: 3rem;
-      font-weight: 700;
-    }
+    // &--price {
+    //   margin-top: 3rem;
+    //   font-weight: 700;
+    // }
   }
 }

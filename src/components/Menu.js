@@ -10,6 +10,7 @@ class Menu extends React.Component {
       { name: "strona główna", path: "/", exact: true },
       { name: "o mnie", path: "/about", exact: false },
       { name: "oferta", path: "/offer", exact: false },
+      { name: "poczytajki", path: "/blog", exact: false },
       { name: "kontakt", path: "/contact", exact: false }
     ]
   };

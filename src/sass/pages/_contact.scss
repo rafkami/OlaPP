@@ -98,7 +98,7 @@
       font-size: calc(#{$default-font-size} * 1.5);
       color: $blue-dark;
       font-weight: 700;
-      margin: 3rem auto 6rem;
+      margin: 3rem auto;
       text-align: center;
       @include respond(tab-land-small) {
         margin: 3rem 6rem 8rem;

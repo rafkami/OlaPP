@@ -30,28 +30,28 @@ const Home = () => {
         <div className="home__slogan">
           <Link to="/offer" className="home__single home__single--1">
             <FontAwesomeIcon
-              icon={faChess}
-              size="lg"
-              className="home__single--icon"
-            />
-            <br />
-            Doradztwo
-          </Link>
-          <Link to="/offer" className="home__single home__single--2">
-            <FontAwesomeIcon
               icon={faComments}
               size="lg"
               className="home__single--icon"
             />
             <br /> Konsultacje
           </Link>
-          <Link to="/offer" className="home__single home__single--3">
+          <Link to="/offer" className="home__single home__single--2">
             <FontAwesomeIcon
               icon={faGraduationCap}
               size="lg"
               className="home__single--icon"
             />
             <br /> Szkolenia
+          </Link>
+          <Link to="/offer" className="home__single home__single--3">
+            <FontAwesomeIcon
+              icon={faChess}
+              size="lg"
+              className="home__single--icon"
+            />
+            <br />
+            Doradztwo
           </Link>
         </div>
         <div className="home__card">
