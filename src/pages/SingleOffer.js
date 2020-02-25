@@ -28,16 +28,16 @@ class SingleOffer extends React.Component {
         <div
           key="back"
           onClick={this.handleClick}
-          className={`offer__single offer__single-back--${fields.shortName}`}
+          className={`offer__single offer__single-back`}
         >
           {" "}
           <h4 className="heading-medium single-offer__heading">
             {fields.serviceName}
           </h4>
           <div className="single-offer__details">
-            <Markdown 
-            source={fields.detailedDesc}
-            className="single-offer__details--desc"
+            <Markdown
+              source={fields.detailedDesc}
+              className="single-offer__details--desc"
             />
           </div>
         </div>

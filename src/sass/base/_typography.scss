@@ -7,7 +7,7 @@ body {
 .heading-big {
   font-size: calc(#{$default-font-size} * 1.75);
   @include respond(tab-port) {
-    font-size: calc(#{$default-font-size} * 1.5);
+    font-size: calc(#{$default-font-size} * 2);
   }
   // @include respond(phone-land-small) {
   //   font-size: calc(#{$default-font-size} * 1.25);

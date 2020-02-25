@@ -7,14 +7,40 @@
     top: -20vh;
     left: 0;
     width: 100vw;
+    @include respond(tab-land) {
+      top: 0;
+      height: 100%;
+      width: auto;
+    }
+    @include respond(tab-land-small) {
+      width: 100%;
+      height: auto;
+      top: -15vh;
+    }
+    @include respond(phone-land) {
+      top: -10vh;
+    }
+    @include respond(tab-port) {
+      top: 0;
+      height: 100vh;
+      width: auto;
+      transform: translateX(-25%);
+    }
   }
   &__text {
     position: absolute;
+    width: 100vw;
     z-index: 2;
     @include center-absolute-el;
     font-size: calc(#{$default-font-size} * 1.5);
     color: $orange-light;
     text-align: center;
+    @include respond(tab-port) {
+      font-size: calc(#{$default-font-size} * 2.5);
+    }
+    @include respond(tab-port-small) {
+      font-size: calc(#{$default-font-size} * 1.8);
+    }
     &--link {
       box-sizing: border-box;
       color: $blue-light;

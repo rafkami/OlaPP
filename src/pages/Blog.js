@@ -64,9 +64,9 @@ class Blog extends React.Component {
       ));
     return (
       <div className="page blog">
-        <div className="contact__heading ">
+        <div className="blog__heading ">
           <h3 className="heading-big">POCZYTAJKI czyli prosto z głowy</h3>
-          <p className="contact__heading--sub">
+          <p className="blog__heading--sub">
             - znajdziesz tutaj artykuły, które zainspirują Cię do działania
           </p>
         </div>

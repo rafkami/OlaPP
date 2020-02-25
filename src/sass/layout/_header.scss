@@ -12,6 +12,9 @@
     rgba($blue-dark, 1) 60%,
     rgba($blue-dark, 0) 90%
   );
+  @include respond(tab-port) {
+    padding: 0 5vh;
+  }
   // background-repeat: no-repeat;
   // border-bottom-left-radius: 50%;
   // border-bottom-right-radius: 50%;
@@ -28,6 +31,9 @@
     @include respond(tab-land) {
       height: 8rem;
     }
+    @include respond(tab-land-small) {
+      height: 5rem;
+    }
   }
 
   &__title {
@@ -40,11 +46,16 @@
     padding-left: 5rem;
     transition: $anim;
     @include respond(tab-land) {
-      flex-basis: 40vw;
-      font-size: calc(#{$default-font-size} * 1.2);
+      display: flex;
+      flex-direction: column;
+      flex-basis: 35vw;
+      font-size: calc(#{$default-font-size} * 1.5);
       line-height: 1.4;
     }
     @include respond(tab-land-small) {
+      flex-direction: row;
+      flex-basis: 60vw;
+      padding-left: 1rem;
       font-size: calc(#{$default-font-size} * 1.1);
     }
     @include respond(tab-port) {
@@ -52,8 +63,8 @@
       font-size: calc(#{$default-font-size} * 1.75);
     }
     @include respond(tab-port-small) {
-      flex-basis: 35vw;
-      font-size: calc(#{$default-font-size} * 1.4);
+      flex-basis: 65vw;
+      font-size: calc(#{$default-font-size} * 1.75);
       line-height: 1.2;
     }
     @include respond(phone-land) {
@@ -87,8 +98,14 @@
       &:last-of-type {
         padding-left: 1rem;
       }
-      &:last-of-type {
-        @include respond(phone-port) {
+      @include respond(tab-land) {
+        &:last-of-type {
+          padding-left: 0.5rem;
+        }
+      }
+      @include respond(phone-port) {
+        margin-bottom: 3rem;
+        &:last-of-type {
           padding-left: 0;
         }
       }

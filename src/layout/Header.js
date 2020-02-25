@@ -7,13 +7,7 @@ const Header = () => {
   return (
     <div className="header__wrapper">
       <img src={Logo} alt="Pomarańczowy liść" className="header__logo" />
-      <NavLink
-        to="/"
-        exact
-        className={
-          window.pageYOffset === 0 ? "header__title" : "header__title--hidden"
-        }
-      >
+      <NavLink to="/" exact className={"header__title"}>
         <span className="header__title--name">Sprężyna wydarzeń</span>
         <span className="header__title--subtitle">- razem do celu</span>
       </NavLink>

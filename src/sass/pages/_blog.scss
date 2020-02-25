@@ -9,6 +9,27 @@
   background-size: cover;
   background-position-y: bottom;
   width: 100%;
+  &__heading {
+    color: $blue-medium;
+    padding-top: 15rem;
+    text-align: center;
+    &--sub {
+      font-size: calc(#{$default-font-size} * 1.25);
+      @include respond(tab-port) {
+        font-size: calc(#{$default-font-size} * 1.5);
+      }
+    }
+    @include respond(tab-land-small) {
+      padding-top: 8rem;
+    }
+    @include respond(tab-port) {
+      padding: 20rem 0 3rem;
+      font-size: calc(#{$default-font-size} * 2);
+    }
+    @include respond(phone-port) {
+      padding: 15rem 0 3rem;
+    }
+  }
   &__container {
     display: flex;
     width: 60vw;
@@ -17,10 +38,12 @@
     flex-wrap: wrap;
     flex-grow: 1;
     @include respond(tab-land) {
+      width: 90vw;
       justify-content: space-evenly;
     }
     @include respond(tab-port) {
       justify-content: space-around;
+      width: 80vw;
     }
   }
 }
@@ -32,7 +55,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 40rem;
+  max-height: 40rem;
   width: 25vw;
   color: $blue-dark;
   text-align: center;
@@ -43,15 +66,57 @@
   @include bcg-offer-back;
   cursor: pointer;
   transition: $anim;
+  @include respond(tab-land) {
+    width: 35vw;
+  }
+  @include respond(tab-land-small) {
+    display: grid;
+    grid-template-rows: 8rem 1fr 5rem;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
+    width: 75vw;
+  }
+  @include respond(phone-land) {
+    max-height: 60rem;
+    padding: 4rem 4rem;
+  }
+  @include respond(phone-land-small) {
+    grid-template-columns: 40% 1fr;
+  }
+  @include respond(tab-port) {
+    display: grid;
+    height: 60rem;
+    width: auto;
+    max-width: 85vw;
+    grid-template-rows: 10rem 1fr 5rem;
+    grid-template-columns: 40% 1fr;
+    grid-column-gap: 4rem;
+  }
+  @include respond(phone-port) {
+    height: 60rem;
+    max-height: 100vh;
+    grid-template-rows: 10rem 20rem 1fr 5rem;
+    grid-template-columns: 1fr 1fr;
+  }
   &__heading {
     padding: 0 2rem;
     text-transform: uppercase;
     color: $orange-light;
     @include respond(tab-land) {
-      font-size: calc(#{$default-font-size}* 1.5);
+      font-size: calc(#{$default-font-size}* 1);
     }
     @include respond(tab-land-small) {
-      padding-top: 1rem;
+      grid-area: 1 / 2 / 2 / 3;
+    }
+    @include respond(phone-land) {
+      font-size: calc(#{$default-font-size} * 1.4);
+    }
+    @include respond(tab-port) {
+      grid-area: 1 / 2 / 2 / 3;
+      font-size: calc(#{$default-font-size} * 1.75);
+    }
+    @include respond(phone-port) {
+      grid-area: 1 / 1 / 2 / -1;
     }
   }
   &__image {
@@ -61,22 +126,70 @@
     overflow: hidden;
     justify-content: center;
     transition: $anim;
+    @include respond(tab-land-small) {
+      grid-area: 1 / 1/ -1 / 2;
+      width: 100%;
+    }
+    @include respond(phone-land) {
+      height: auto;
+    }
+    @include respond(tab-port) {
+      grid-area: 1 / 1/ -1 / 2;
+      width: 100%;
+      height: 90%;
+    }
+    @include respond(phone-port) {
+      grid-area: 2/ 1 / 3/ -1;
+      width: 100%;
+      height: 90%;
+    }
+
     &--thumb {
       height: 100%;
+      @include respond(tab-land-small) {
+        height: auto;
+        width: 200%;
+      }
+      @include respond(tab-port) {
+        width: auto;
+        height: 120%;
+      }
+      @include respond(phone-port) {
+        width: auto;
+        height: 120%;
+      }
     }
   }
   &__lead {
     font-size: calc(#{$default-font-size} * 0.8);
+    @include respond(phone-land) {
+      font-size: calc(#{$default-font-size} * 1.2);
+    }
+    @include respond(tab-port) {
+      font-size: calc(#{$default-font-size} * 1.5);
+    }
+    @include respond(phone-port) {
+      grid-area: 3 / 1 / 4 / -1;
+    }
   }
   &__date {
     font-size: calc(#{$default-font-size} * 0.6);
     border-top: 1px solid $blue-dark;
     padding: 0.5rem 0;
+    @include respond(phone-land) {
+      font-size: calc(#{$default-font-size} * 0.9);
+    }
+    @include respond(tab-port) {
+      font-size: calc(#{$default-font-size} * 1.2);
+    }
+    @include respond(phone-port) {
+      grid-area: 4 / 1 / 5 / -1;
+    }
   }
   &:hover {
     box-shadow: 0 0 6rem $orange-light;
   }
   &:hover &__image {
-    transform: scale(1.05) translateY(-2.5%);
+    transform: scale(1.05) translateY(-1%);
   }
 }

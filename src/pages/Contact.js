@@ -34,7 +34,7 @@ const Contact = () => {
         <div className="contact__it--channel">
           <a
             href="mailto:olaprzyluska@gmail.com"
-            className="contact__it--link btn"
+            className="btn contact__it--link"
           >
             <FontAwesomeIcon
               icon={faAt}
@@ -47,7 +47,7 @@ const Contact = () => {
         <div className="contact__it--channel">
           <a
             href="https://m.me/106049154072037"
-            className="contact__it--link btn"
+            className="btn contact__it--link"
           >
             <FontAwesomeIcon
               icon={faFacebookMessenger}
@@ -60,7 +60,7 @@ const Contact = () => {
         <div className="contact__it--channel">
           <a
             href="skype:olapiotrowiczprzyluska?add"
-            className="contact__it--link btn"
+            className="btn contact__it--link"
           >
             <FontAwesomeIcon
               icon={faSkype}
@@ -73,7 +73,7 @@ const Contact = () => {
         <div className="contact__it--channel">
           <a
             href="https://www.facebook.com/Spr%C4%99%C5%BCyna-wydarze%C5%84-razem-do-celu-106049154072037/"
-            className="contact__it--link btn"
+            className="btn contact__it--link"
           >
             <FontAwesomeIcon
               icon={faFacebook}
@@ -86,7 +86,7 @@ const Contact = () => {
         <div className="contact__it--channel">
           <a
             href="https://www.linkedin.com/in/apiotrowiczprzyluskakonsultant/"
-            className="contact__it--link btn"
+            className="btn contact__it--link"
           >
             <FontAwesomeIcon
               icon={faLinkedin}
@@ -105,7 +105,7 @@ const Contact = () => {
         <div className="contact__address--wrapper">
           <div className="contact__address--place">
             <a
-              href="http://busy-bee.pl"
+              href="https://clockwork.com.pl/coworking-warszawa"
               className="heading-medium contact__address--placename"
             >
               <img

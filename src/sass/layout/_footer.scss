@@ -2,11 +2,19 @@
   position: fixed;
   color: $white;
   top: 0;
-  bottom: 0;
   left: 0;
   margin: 1rem auto;
   width: 10rem;
   height: 5rem;
   text-align: center;
-  transform: rotate(-90deg) translateX(-44rem);
+  transform: rotate(-90deg) translateX(-50vh);
+  z-index: 1000000;
+  // @include respond(tab-land-small) {
+  //   transform: rotate(-90deg) translateX(-50vh);
+  // }
+  @include respond(phone-port) {
+    width: 15rem;
+    margin-left: -3rem;
+    transform: rotate(-90deg) translateX(-50vh);
+  }
 }
