@@ -47,10 +47,3 @@ class SingleOffer extends React.Component {
 }
 
 export default SingleOffer;
-
-// <div className="single-offer__details--price">
-//               {fields.shortName === "Szkolenia" ||
-//               fields.shortName === "Doradztwo"
-//                 ? `Cena ustalana indywidualnie`
-//                 : `Cena za 1h spotkania: ${fields.price} zł`}
-//             </div>

@@ -16,8 +16,7 @@ import clockWork from "../images/clockwork_logo.png";
 import bLab from "../images/coworking_nowyswiat.png";
 
 const Map = ReactMapboxGl({
-  accessToken:
-    "pk.eyJ1IjoicmFma2FtaSIsImEiOiJjanV2M2ZtZnMwbjk3NDRwaTcxZndqaDV6In0.Ir9V-RDPPvvT5giFhI9COw"
+  accessToken: `${process.env.REACT_APP_mapboxToken}`
 });
 
 const Contact = () => {

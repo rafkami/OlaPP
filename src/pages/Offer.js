@@ -8,9 +8,9 @@ class Offer extends React.Component {
   };
 
   client = contentful.createClient({
-    space: "v042bffefd5p",
+    space: `${process.env.REACT_APP_contenfulSpace}`,
     environment: "master",
-    accessToken: "te8FhWalW-4BYzgI_HCJLWdWNJzTso2pQY1ykQHRuQs"
+    accessToken: `${process.env.REACT_APP_contenfulToken}`
   });
 
   componentDidMount() {
