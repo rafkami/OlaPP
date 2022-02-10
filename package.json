@@ -10,7 +10,7 @@
     "@fortawesome/react-fontawesome": "^0.1.8",
     "contentful": "^7.13.0",
     "mapbox-gl": "^1.6.1",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "pdf-viewer-reactjs": "^2.0.2",
     "re-carousel": "^2.4.0",
     "react": "^16.12.0",
